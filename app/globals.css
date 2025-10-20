@@ -1,26 +1,313 @@
+
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Override defaults */
+  --color-*: initial;
+  
+  /* Refined Retro Gaming Colors - Synthwave Inspired */
+  --color-background: oklch(0.12 0.04 265);        /* Deep dark purple-blue */
+  --color-foreground: oklch(0.95 0.02 180);        /* Bright cyan-white */
+  
+  --color-card: oklch(0.18 0.06 270);              /* Dark purple card */
+  --color-card-foreground: oklch(0.95 0.02 180);
+  
+  --color-popover: oklch(0.18 0.06 270);
+  --color-popover-foreground: oklch(0.95 0.02 180);
+  
+  --color-primary: oklch(0.65 0.28 330);           /* Hot pink/magenta - main actions */
+  --color-primary-foreground: oklch(0.98 0.01 180);
+  
+  --color-secondary: oklch(0.6 0.25 190);          /* Electric cyan - secondary actions */
+  --color-secondary-foreground: oklch(0.12 0.04 265);
+  
+  --color-muted: oklch(0.3 0.08 270);              /* Muted purple */
+  --color-muted-foreground: oklch(0.7 0.15 200);   /* Light cyan-gray */
+  
+  --color-accent: oklch(0.75 0.25 285);            /* Bright violet - highlights */
+  --color-accent-foreground: oklch(0.12 0.04 265);
+  
+  --color-destructive: oklch(0.65 0.28 15);        /* Warm red-orange */
+  --color-destructive-foreground: oklch(0.98 0.01 180);
+  
+  --color-success: oklch(0.7 0.2 160);             /* Neon teal - success states */
+  --color-warning: oklch(0.75 0.18 85);            /* Soft gold - warnings */
+  --color-info: oklch(0.65 0.25 250);              /* Blue-violet - info */
+  
+  --color-border: oklch(0.35 0.12 270);            /* Subtle purple border */
+  --color-input: oklch(0.2 0.08 270);              /* Dark input background */
+  --color-ring: oklch(0.65 0.28 330);              /* Pink focus ring */
+  
+  /* Sidebar */
+  --color-sidebar: oklch(0.15 0.05 268);
+  --color-sidebar-foreground: oklch(0.95 0.02 180);
+  --color-sidebar-primary: oklch(0.65 0.28 330);
+  --color-sidebar-primary-foreground: oklch(0.98 0.01 180);
+  --color-sidebar-accent: oklch(0.75 0.25 285);
+  --color-sidebar-accent-foreground: oklch(0.12 0.04 265);
+  --color-sidebar-border: oklch(0.35 0.12 270);
+  --color-sidebar-ring: oklch(0.65 0.28 330);
+  
+  /* Charts - Cohesive retro palette */
+  --color-chart-1: oklch(0.65 0.28 330);           /* Hot pink */
+  --color-chart-2: oklch(0.6 0.25 190);            /* Cyan */
+  --color-chart-3: oklch(0.75 0.25 285);           /* Violet */
+  --color-chart-4: oklch(0.7 0.2 160);             /* Teal */
+  --color-chart-5: oklch(0.75 0.18 85);            /* Gold */
+  
+  /* Border radius - Balanced retro feel */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), 'Courier New', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Refined Retro Game Animations */
+@keyframes pixel-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px var(--color-primary),
+      0 0 16px var(--color-primary);
+  }
+  50% {
+    box-shadow: 
+      0 0 16px var(--color-primary),
+      0 0 32px var(--color-primary),
+      0 0 48px var(--color-primary);
+  }
+}
+
+@keyframes slide-in-up {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-down {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes flicker-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    text-shadow: 
+      0 0 8px var(--color-primary),
+      0 0 16px var(--color-primary),
+      0 0 24px var(--color-primary);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Subtle CRT scanline overlay - much lighter */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.08) 50%
+    );
+    background-size: 100% 3px;
+    z-index: 9999;
+    opacity: 0.15;
+    pointer-events: none;
+    animation: flicker-subtle 4s infinite;
+  }
+  
+  /* Slow moving scanline - more subtle */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(100, 200, 255, 0.03),
+      transparent
+    );
+    z-index: 9998;
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+  }
+  
+  /* Smooth focus styles */
+  *:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Smooth entrance animations */
+  .animate-fade-in {
+    animation: pixel-fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-up {
+    animation: slide-in-up 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-down {
+    animation: slide-in-down 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Glow effects - refined */
+  .glow-primary {
+    box-shadow: 
+      0 0 12px rgba(255, 61, 148, 0.5),
+      0 0 24px rgba(255, 61, 148, 0.3);
+  }
+  
+  .glow-secondary {
+    box-shadow: 
+      0 0 12px rgba(0, 255, 255, 0.5),
+      0 0 24px rgba(0, 255, 255, 0.3);
+  }
+  
+  .glow-accent {
+    box-shadow: 
+      0 0 12px rgba(148, 0, 211, 0.5),
+      0 0 24px rgba(148, 0, 211, 0.3);
+  }
+  
+  .animate-glow {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+  
+  /* Neon text effect */
+  .text-neon {
+    text-shadow: 
+      0 0 8px currentColor,
+      0 0 16px currentColor;
+  }
+  
+  .text-neon-flicker {
+    animation: neon-flicker 4s infinite;
+  }
+  
+  /* Premium button effect */
+  .btn-retro {
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 0 0 oklch(0.45 0.28 330),
+      0 0 16px rgba(255, 61, 148, 0.3);
+  }
+  
+  .btn-retro:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 6px 0 0 oklch(0.45 0.28 330),
+      0 0 24px rgba(255, 61, 148, 0.5);
+  }
+  
+  .btn-retro:active {
+    transform: translateY(2px);
+    box-shadow: 
+      0 2px 0 0 oklch(0.45 0.28 330),
+      0 0 12px rgba(255, 61, 148, 0.3);
+  }
+  
+  /* Glass morphism effect */
+  .glass-card {
+    background: oklch(0.18 0.06 270 / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.35 0.12 270 / 0.5);
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-retro {
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.04 265),
+      oklch(0.18 0.06 285),
+      oklch(0.15 0.05 250)
+    );
+  }
+  
+  /* Pixel perfect rendering for images */
+  .pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
 }
