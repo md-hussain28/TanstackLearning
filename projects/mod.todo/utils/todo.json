@@ -1,0 +1,147 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Finish Next.js API integration",
+      "description": "Implement the new GET and POST APIs using Next.js App Router with proper error handling.",
+      "completed": false,
+      "priority": "high",
+      "dueDate": "2025-11-01T23:59:59.000Z",
+      "createdAt": "2025-10-20T10:00:00.000Z",
+      "updatedAt": "2025-10-21T12:30:00.000Z",
+      "tags": ["work", "development", "backend"],
+      "assignedTo": "john.doe@example.com",
+      "subtasks": [
+        {
+          "id": "1-1",
+          "title": "Create GET APIs",
+          "description": "Implement GET endpoints for todos",
+          "completed": true,
+          "priority": "medium",
+          "createdAt": "2025-10-20T10:05:00.000Z",
+          "updatedAt": "2025-10-20T15:30:00.000Z",
+          "parentId": "1",
+          "tags": ["api", "backend"]
+        },
+        {
+          "id": "1-2",
+          "title": "Add error simulation",
+          "description": "Implement realistic error handling and delays",
+          "completed": false,
+          "priority": "high",
+          "createdAt": "2025-10-20T10:10:00.000Z",
+          "parentId": "1",
+          "tags": ["testing", "ux"]
+        }
+      ],
+      "comments": [
+        {
+          "id": "c1",
+          "author": "jane.smith",
+          "message": "Don't forget to add delay simulation for better UX testing.",
+          "createdAt": "2025-10-21T09:00:00.000Z"
+        },
+        {
+          "id": "c2",
+          "author": "john.doe",
+          "message": "Great point! I'll implement that next.",
+          "createdAt": "2025-10-21T10:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Plan weekend trip",
+      "description": "Research destinations and book accommodations for the upcoming weekend getaway.",
+      "completed": false,
+      "priority": "low",
+      "dueDate": "2025-10-25T18:00:00.000Z",
+      "createdAt": "2025-10-15T07:30:00.000Z",
+      "updatedAt": "2025-10-18T14:20:00.000Z",
+      "tags": ["personal", "travel", "planning"],
+      "assignedTo": "me@example.com",
+      "subtasks": [
+        {
+          "id": "2-1",
+          "title": "Research destinations",
+          "completed": true,
+          "priority": "medium",
+          "createdAt": "2025-10-15T08:00:00.000Z",
+          "updatedAt": "2025-10-16T12:00:00.000Z",
+          "parentId": "2"
+        },
+        {
+          "id": "2-2",
+          "title": "Book hotel",
+          "completed": false,
+          "priority": "high",
+          "createdAt": "2025-10-16T09:00:00.000Z",
+          "parentId": "2"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "3",
+      "title": "Review team performance",
+      "description": "Conduct quarterly performance reviews for the development team.",
+      "completed": true,
+      "priority": "medium",
+      "dueDate": "2025-10-30T17:00:00.000Z",
+      "createdAt": "2025-10-01T09:00:00.000Z",
+      "updatedAt": "2025-10-28T16:45:00.000Z",
+      "tags": ["work", "management", "hr"],
+      "assignedTo": "manager@company.com",
+      "subtasks": [],
+      "comments": [
+        {
+          "id": "c3",
+          "author": "hr.department",
+          "message": "All reviews completed successfully. Great work!",
+          "createdAt": "2025-10-28T17:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Learn TypeScript advanced features",
+      "description": "Study generics, decorators, and advanced type patterns in TypeScript.",
+      "completed": false,
+      "priority": "medium",
+      "createdAt": "2025-10-22T08:00:00.000Z",
+      "tags": ["learning", "typescript", "development"],
+      "assignedTo": "dev@example.com",
+      "subtasks": [
+        {
+          "id": "4-1",
+          "title": "Study generics",
+          "completed": true,
+          "priority": "high",
+          "createdAt": "2025-10-22T08:30:00.000Z",
+          "updatedAt": "2025-10-23T10:00:00.000Z",
+          "parentId": "4"
+        },
+        {
+          "id": "4-2",
+          "title": "Practice decorators",
+          "completed": false,
+          "priority": "medium",
+          "createdAt": "2025-10-23T10:30:00.000Z",
+          "parentId": "4"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "5",
+      "title": "Organize home office",
+      "description": "Clean up workspace and organize files and equipment.",
+      "completed": false,
+      "priority": "low",
+      "createdAt": "2025-10-24T07:00:00.000Z",
+      "tags": ["personal", "organization", "home"],
+      "subtasks": [],
+      "comments": []
+    }
+  ]
+}

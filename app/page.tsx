@@ -25,7 +25,7 @@ export default function Home() {
           href="/problems-with/useEffect"
         />
 
-        <NavigationCard
+        {/* <NavigationCard
           title="Basic React Query"
           description="Learn how React Query simplifies data fetching with automatic state management and caching."
           href="/basic-react-query"
@@ -53,6 +53,11 @@ export default function Home() {
           title="Optimistic Updates"
           description="Improve user experience by updating the UI optimistically before server confirmation."
           href="/infinite-query"
+        /> */}
+         <NavigationCard
+          title="Todo Project"
+          description="Todo project with production grade code and best practices"
+          href="/project/todo-app"
         />
       </main>
 
