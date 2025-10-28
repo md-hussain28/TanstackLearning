@@ -1,10 +1,8 @@
 import React from 'react'
-
+import TodoPage from '@/projects/mod.todo/components/TodoPage'
 const page = () => {
   return (
-    <div>
-        this is todo app
-    </div>
+   <TodoPage/>
   )
 }
 

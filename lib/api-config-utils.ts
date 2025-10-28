@@ -70,7 +70,7 @@ export function getNetworkDelay(operation: 'read' | 'write' | 'delete' | 'search
 // Enhanced error probability based on operation
 export function getErrorProbability(operation: 'read' | 'write' | 'delete' | 'search'): number {
   const probabilities = {
-    read: 0.15,    // Lower chance for read operations
+    read: 0.25,    // Lower chance for read operations
     write: 0.25,   // Higher chance for write operations
     delete: 0.20,  // Medium chance for delete operations
     search: 0.18   // Medium chance for search operations
